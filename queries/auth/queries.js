@@ -7,12 +7,12 @@ const selectFullUser = ({ email }) => {
   `;
 };
 
-const insertUser = ({ username, email, password, }) => {
+const insertUser = ({ email, password }) => {
   return sql`
     INSERT INTO users (
-        username, email, password, 
+      email, password
     ) VALUES (
-        ${username}, ${email}, ${password},
+      ${email}, ${password}
     );
   `;
 };
@@ -21,5 +21,3 @@ module.exports = {
   selectFullUser,
   insertUser,
 };
-
-  

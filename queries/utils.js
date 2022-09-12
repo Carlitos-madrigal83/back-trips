@@ -1,7 +1,7 @@
 const queryCatcher =
   (fn, origin) =>
   async (...args) => {
-      try {
+    try {
       const result = await fn(...args);
 
       return {
