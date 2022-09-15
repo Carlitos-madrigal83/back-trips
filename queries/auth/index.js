@@ -12,7 +12,7 @@ const getFullUser =
 
 const createUser =
   (db) =>
-  async ({ email, password }) => {
+  async ({ email, password, username }) => {
     const user = await getFullUser(db)({ email });
 
     if (user.data)
@@ -24,7 +24,7 @@ const createUser =
     return await queryCatcher(
       db.query,
       "createUser"
-    )(insertUser({ email, password }));
+    )(insertUser({ email, password, username }));
   };
 
 const getCorrectUser =

@@ -7,12 +7,12 @@ const selectFullUser = ({ email }) => {
   `;
 };
 
-const insertUser = ({ email, password }) => {
+const insertUser = ({ email, password, username }) => {
   return sql`
     INSERT INTO users (
-      email, password
+      email, password, username
     ) VALUES (
-      ${email}, ${password}
+      ${email}, ${password}, ${username}
     );
   `;
 };
