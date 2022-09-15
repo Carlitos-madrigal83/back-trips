@@ -1,10 +1,11 @@
-require("dotenv").config();
-const express = require("express");
+const app = require("./app");
 
-const app = express();
+const main = async () => {
+  (await app()).listen(process.env.PORT, () =>
+    console.info(
+      `> listening at ${process.env.PORT} `
+    )
+  );
+};
 
-app.use(express.json());
-
-app.listen(process.env.PORT, () =>
-  console.info("> listening at:",  process.env.PORT)
-);
+main();
