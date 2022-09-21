@@ -1,11 +1,43 @@
 const randomCoordinates = require('random-coordinates');
+const { saveCoordinates } = require("../../queries/map-random");
+const errors = require("../../errors/commons");
 
 module.exports = (db) => async (req, res, next) => {
-  const saveCoordinates = randomCoordinates();
+  const coordinates = randomCoordinates();
+
+  const companies = ["Iberia", "Easyjet", "Ryanair", "Qatar Airways", "Vueling", "Air Europa"]
+
+  const durationFlights = [
+    {
+      start: "10:50",
+      duration: "1:35",
+      finish: "12:25"
+    },
+    {
+      start: "16:15",
+      duration: "2:50",
+      finish: "19:05"
+    }
+  ]
+
+  const { start, duration, finish } = durationFlights[Math.round(Math.random())]
+  const flight = {
+    icon: companies[Math.round(Math.random() * 5)],
+    start, duration, finish
+  }
   
+  const queryResult = await saveCoordinates(db)({
+    coordinates
+  });
+
+  if (!queryResult.ok) return next(errors[500]);
+
   res.status(200).json({
     success: true,
-    data: saveCoordinates
+    data: {
+      coordinates,
+      flight
+    }
   });
 };
 
