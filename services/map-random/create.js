@@ -17,6 +17,46 @@ module.exports = (db) => async (req, res, next) => {
       start: "16:15",
       duration: "2:50",
       finish: "19:05"
+    },
+    {
+      start: "01:08",
+      duration: "9:12",
+      finish: "10:20"
+    },
+    {
+      start: "23:40",
+      duration: "2:40",
+      finish: "02:20"
+    },
+    {
+      start: "06:30",
+      duration: "2:40",
+      finish: "09:10"
+    },
+    {
+      start: "11:25",
+      duration: "5:45",
+      finish: "17:10"
+    },
+    {
+      start: "12:00",
+      duration: "2:52",
+      finish: "14:52"
+    },
+    {
+      start: "08:15",
+      duration: "00:25",
+      finish: "08:40"
+    },
+    {
+      start: "10:25",
+      duration: "13:15",
+      finish: "23:40"
+    },
+    {
+      start: "18:15",
+      duration: "2:28",
+      finish: "20:43"
     }
   ]
 
