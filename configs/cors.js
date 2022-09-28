@@ -1,4 +1,4 @@
-const whitelist = ["http://localhost:3000"];
+const whitelist = ["http://localhost:3000", "https://front-blue-psi.vercel.app"];
 
 module.exports = {
   origin: (origin, callback) => {
